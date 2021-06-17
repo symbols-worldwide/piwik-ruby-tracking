@@ -1,8 +1,8 @@
 require "erb"
 
-describe "views/piwik_tracking_tag.html.erb" do
+describe "views/matomo_tracking_tag.html.erb" do
   before(:each) do
-    filename = File.join(File.dirname(__FILE__), '..', '..', 'app', 'views', 'piwik_analytics', 'piwik_tracking_tag.html.erb')
+    filename = File.join(File.dirname(__FILE__), '..', '..', 'app', 'views', 'matomo_analytics', 'matomo_tracking_tag.html.erb')
     @template = ERB.new(File.read(filename))
   end
 

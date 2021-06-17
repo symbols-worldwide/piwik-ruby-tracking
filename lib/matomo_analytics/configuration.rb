@@ -1,8 +1,8 @@
-module PiwikAnalytics
+module MatomoAnalytics
   class Configuration
 
     #
-    # The url of the Piwik instance
+    # The url of the Matomo instance
     # Defaults to localhost
     #
     def url
@@ -18,7 +18,7 @@ module PiwikAnalytics
     end
 
     #
-    # Whether or not to disable Piwik.
+    # Whether or not to disable Matomo.
     # Defaults to false.
     #
     def disabled?
@@ -28,7 +28,7 @@ module PiwikAnalytics
     private
 
     #
-    # return a specific key from the user configuration in config/piwik.yml
+    # return a specific key from the user configuration in config/matomo.yml
     #
     # ==== Returns
     #
@@ -42,7 +42,7 @@ module PiwikAnalytics
 
     #
     # Memoized hash of configuration options for the current Rails environment
-    # as specified in config/piwik.yml
+    # as specified in config/matomo.yml
     #
     # ==== Returns
     #
@@ -50,11 +50,11 @@ module PiwikAnalytics
     #
     def user_configuration
       @user_configuration ||= begin
-        path = File.join(::Rails.root, 'config', 'piwik.yml')
+        path = File.join(::Rails.root, 'config', 'matomo.yml')
         if File.exist?(path)
           File.open(path) do |file|
             processed = ERB.new(file.read).result
-            YAML.load(processed)[::Rails.env]['piwik']
+            YAML.load(processed)[::Rails.env]['matomo']
           end
         else
           {}

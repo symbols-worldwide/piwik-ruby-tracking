@@ -1,6 +1,6 @@
-require "piwik_analytics/configuration"
+require "matomo_analytics/configuration"
 
-describe PiwikAnalytics::Configuration do
+describe MatomoAnalytics::Configuration do
   before(:each) do
     conf_mock = {
       "id_site"   => 4,
@@ -8,7 +8,7 @@ describe PiwikAnalytics::Configuration do
       "disabled"  => true
     }
 
-    @config = PiwikAnalytics::Configuration.new
+    @config = MatomoAnalytics::Configuration.new
     allow(@config).to receive(:user_configuration).and_return(conf_mock)
   end
   it "returns a id_site" do

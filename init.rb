@@ -1,1 +1,1 @@
-require File.dirname(__FILE__) + "/lib/piwik_analytics"
+require File.dirname(__FILE__) + "/lib/matomo_analytics"

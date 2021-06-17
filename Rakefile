@@ -8,10 +8,10 @@ task default: :spec
 RSpec::Core::RakeTask.new(:spec)
 task default: :spec
 
-desc 'Generate documentation for the piwik_analytics plugin.'
+desc 'Generate documentation for the matomo_analytics plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'PiwikAnalytics'
+  rdoc.title    = 'MatomoAnalytics'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
